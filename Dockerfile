@@ -7,12 +7,6 @@ WORKDIR /app
 # 复制所有文件
 COPY . .
 
-# 安装 pnpm
-RUN npm install -g pnpm
-
-# 安装依赖并构建
-RUN pnpm install && pnpm run build
-
 # 使用 static-web-server 镜像作为最终镜像
 FROM joseluisq/static-web-server:2
 
